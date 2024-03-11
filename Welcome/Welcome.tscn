@@ -1,40 +1,54 @@
-[gd_scene load_steps=5 format=3 uid="uid://bb04fyns6eae2"]
+[gd_scene load_steps=7 format=3 uid="uid://bb04fyns6eae2"]
 
 [ext_resource type="Texture2D" uid="uid://dfqvljy1ufgo8" path="res://Welcome/talking.jpg" id="1_qbbba"]
 [ext_resource type="Texture2D" uid="uid://dye6gmxx0eesa" path="res://Welcome/bubble.png" id="2_6t76g"]
+[ext_resource type="Texture2D" uid="uid://c06exgv8utrao" path="res://Welcome/HR.png" id="2_omkny"]
 [ext_resource type="PackedScene" uid="uid://cim147jopvi5e" path="res://UI/Button.tscn" id="3_gyln6"]
 [ext_resource type="PackedScene" uid="uid://cqx30ukxlimpl" path="res://UI/ButtonLabel.tscn" id="4_yhtjl"]
+[ext_resource type="Script" path="res://UI/Button.cs" id="5_cr07j"]
 
 [node name="Node2D" type="Node2D"]
 
-[node name="TalkingHR" type="Sprite2D" parent="."]
+[node name="Background" type="Sprite2D" parent="."]
 position = Vector2(958.094, 538.939)
-scale = Vector2(0.265096, 0.265096)
 texture = ExtResource("1_qbbba")
+
+[node name="HR" type="Sprite2D" parent="."]
+position = Vector2(1376, 720)
+texture = ExtResource("2_omkny")
 
 [node name="TalkingBubble" type="Sprite2D" parent="."]
 clip_children = 2
-position = Vector2(640, 384)
-scale = Vector2(1.13534, 1.13194)
+position = Vector2(720, 384)
+scale = Vector2(1.002, 1)
 texture = ExtResource("2_6t76g")
 flip_h = true
 
 [node name="Label" type="Label" parent="TalkingBubble"]
-offset_left = -304.0
-offset_top = -272.0
-offset_right = 264.0
-offset_bottom = 168.0
+offset_left = -300.477
+offset_top = -249.914
+offset_right = 267.523
+offset_bottom = 135.086
 theme_override_font_sizes/font_size = 36
-text = "Bonjour et Bienvenue chez Cellenza. 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam."
+text = "Bonjour et bienvenue chez Cellenza, je m'appelle Manon et je serai ton guide pour aujourd'hui.
+La première chose à faire est de prendre une photo de toi avec ton plus beau."
 autowrap_mode = 2
 
 [node name="TextureButton" parent="TalkingBubble" instance=ExtResource("3_gyln6")]
-offset_left = -373.778
-offset_top = -125.447
-offset_right = -55.7781
-offset_bottom = -44.4472
+anchors_preset = 7
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -498.427
+offset_top = -421.123
+offset_right = -180.427
+offset_bottom = -340.123
+grow_vertical = 0
+script = ExtResource("5_cr07j")
+SceneName = "Picture/Picture.tscn"
 
 [node name="Label" parent="TalkingBubble/TextureButton" instance=ExtResource("4_yhtjl")]
-layout_mode = 0
-anchors_preset = 0
+layout_mode = 1
+offset_top = -22.5
+offset_bottom = 22.5
+
+[connection signal="button_up" from="TalkingBubble/TextureButton" to="TalkingBubble/TextureButton" method="OnLetsGoButtonDown"]
