@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://c047sv1r13i5u"]
+
+[ext_resource type="Script" path="res://Entry/EntryScene.cs" id="1_q6dne"]
+[ext_resource type="Texture2D" uid="uid://31lgr5um4sql" path="res://Sprites/image-modern-corridor-with-elevator-with-glass-doors-office-building.jpg" id="1_ru6hl"]
+[ext_resource type="Script" path="res://Entry/Door.cs" id="2_sxukv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kjxwx"]
+size = Vector2(232, 600)
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_q6dne")
+
+[node name="DoorImage" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+scale = Vector2(0.26989, 0.227464)
+texture = ExtResource("1_ru6hl")
+
+[node name="Door" type="Area2D" parent="."]
+position = Vector2(276, 516)
+script = ExtResource("2_sxukv")
+
+[node name="DoorHandler" type="CollisionShape2D" parent="Door"]
+shape = SubResource("RectangleShape2D_kjxwx")
+
+[node name="NextTimer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[connection signal="input_event" from="Door" to="Door" method="OnDoorClicked"]
+[connection signal="timeout" from="NextTimer" to="." method="OnNextTimerTimeout"]
