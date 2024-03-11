@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://31lgr5um4sql"
-path="res://.godot/imported/image-modern-corridor-with-elevator-with-glass-doors-office-building.jpg-152be8ae504298b06250265ac5c113bb.ctex"
+uid="uid://if0bn2n847gf"
+path="res://.godot/imported/yellow_button02.png-635830777310c3b0d8ce56402039c154.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/image-modern-corridor-with-elevator-with-glass-doors-office-building.jpg"
-dest_files=["res://.godot/imported/image-modern-corridor-with-elevator-with-glass-doors-office-building.jpg-152be8ae504298b06250265ac5c113bb.ctex"]
+source_file="res://UI/yellow_button02.png"
+dest_files=["res://.godot/imported/yellow_button02.png-635830777310c3b0d8ce56402039c154.ctex"]
 
 [params]
 

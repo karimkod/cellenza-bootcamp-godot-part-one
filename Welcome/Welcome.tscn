@@ -1,0 +1,60 @@
+[gd_scene load_steps=6 format=3 uid="uid://bb04fyns6eae2"]
+
+[ext_resource type="Texture2D" uid="uid://dfqvljy1ufgo8" path="res://Welcome/talking.jpg" id="1_qbbba"]
+[ext_resource type="Texture2D" uid="uid://dye6gmxx0eesa" path="res://Welcome/bubble.png" id="2_6t76g"]
+[ext_resource type="Texture2D" uid="uid://mvphwu4rv31g" path="res://UI/yellow_button04.png" id="3_yp0qr"]
+[ext_resource type="Texture2D" uid="uid://dmbfty1p5jxl2" path="res://UI/yellow_button03.png" id="4_vjnmf"]
+[ext_resource type="Texture2D" uid="uid://if0bn2n847gf" path="res://UI/yellow_button02.png" id="5_5dkqt"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TalkingHR" type="Sprite2D" parent="."]
+position = Vector2(958.094, 538.939)
+scale = Vector2(0.265096, 0.265096)
+texture = ExtResource("1_qbbba")
+
+[node name="TalkingBubble" type="Sprite2D" parent="."]
+clip_children = 2
+position = Vector2(640, 384)
+scale = Vector2(1.13534, 1.13194)
+texture = ExtResource("2_6t76g")
+flip_h = true
+
+[node name="Label" type="Label" parent="TalkingBubble"]
+offset_left = -304.0
+offset_top = -272.0
+offset_right = 264.0
+offset_bottom = 168.0
+theme_override_font_sizes/font_size = 36
+text = "Bonjour et Bienvenue chez Cellenza. 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam."
+autowrap_mode = 2
+
+[node name="TextureButton" type="TextureButton" parent="TalkingBubble"]
+offset_left = -56.0
+offset_top = 168.0
+offset_right = 262.0
+offset_bottom = 249.0
+texture_normal = ExtResource("3_yp0qr")
+texture_pressed = ExtResource("4_vjnmf")
+texture_hover = ExtResource("5_5dkqt")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="TalkingBubble/TextureButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -71.5
+offset_top = -28.0
+offset_right = 71.5
+offset_bottom = 22.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 36
+text = "Let's go!"
+horizontal_alignment = 1
+vertical_alignment = 1

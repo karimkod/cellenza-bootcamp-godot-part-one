@@ -12,16 +12,19 @@ public partial class Door : Area2D
 	public override void _Process(double delta)
 	{
 	}
-	
+
 	private void OnDoorClicked(Node viewport, InputEvent @event, long shape_idx)
 	{
 		if (@event.IsPressed())
 		{
 			var timer = GetNode<Timer>("../NextTimer");
-			
-			if(timer.IsStopped())
+			var knockSoundPlayer = GetNode<AudioStreamPlayer2D>("../KnockSoundPlayer");
+
+			if (timer.IsStopped())
+			{
+				knockSoundPlayer.Play();
 				timer.Start();
+			}
 		}
 	}
-
 }

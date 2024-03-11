@@ -11,8 +11,8 @@ config_version=5
 [application]
 
 config/name="CellenzaExplorer"
+run/main_scene="res://Entry/Entry.tscn"
 config/features=PackedStringArray("4.2", "C#", "Forward Plus")
-config/icon="res://icon.svg"
 
 [display]
 
