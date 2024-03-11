@@ -1,26 +1,27 @@
 [gd_scene load_steps=6 format=3 uid="uid://c047sv1r13i5u"]
 
 [ext_resource type="Script" path="res://Entry/EntryScene.cs" id="1_q6dne"]
-[ext_resource type="Texture2D" uid="uid://31lgr5um4sql" path="res://Entry/image-modern-corridor-with-elevator-with-glass-doors-office-building.jpg" id="1_ru6hl"]
+[ext_resource type="Texture2D" uid="uid://is5hjwv4rtwy" path="res://Entry/Entree.png" id="2_8t13p"]
 [ext_resource type="Script" path="res://Entry/Door.cs" id="2_sxukv"]
 [ext_resource type="AudioStream" uid="uid://di8514wl7oigc" path="res://Entry/knocking.mp3" id="4_exi4y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kjxwx"]
-size = Vector2(232, 600)
+size = Vector2(284, 836)
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_q6dne")
 
 [node name="DoorImage" type="Sprite2D" parent="."]
-position = Vector2(960, 540)
-scale = Vector2(0.26989, 0.227464)
-texture = ExtResource("1_ru6hl")
+position = Vector2(1128.31, 544)
+scale = Vector2(0.926314, 0.77907)
+texture = ExtResource("2_8t13p")
 
 [node name="Door" type="Area2D" parent="."]
 position = Vector2(276, 516)
 script = ExtResource("2_sxukv")
 
 [node name="DoorHandler" type="CollisionShape2D" parent="Door"]
+position = Vector2(1098, 146)
 shape = SubResource("RectangleShape2D_kjxwx")
 
 [node name="NextTimer" type="Timer" parent="."]

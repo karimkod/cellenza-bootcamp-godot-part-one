@@ -13,11 +13,9 @@ public partial class EntryScene : Node2D
 	{
 	}
 	
-	
 	private void OnNextTimerTimeout()
 	{
 		GetTree().ChangeSceneToFile("Welcome/Welcome.tscn");
 	}
-
 }
 
