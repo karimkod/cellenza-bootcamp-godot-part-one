@@ -67,6 +67,7 @@ public partial class Slider : Node2D
 			< 120 => EmojiSteps[3],
 			< 150 => EmojiSteps[4],
 			>= 150 => EmojiSteps[5],
+			_ => EmojiSteps[0]
 		};
 
 	}
