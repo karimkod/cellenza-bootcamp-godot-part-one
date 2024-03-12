@@ -1,0 +1,119 @@
+[gd_scene load_steps=13 format=3 uid="uid://cfebq2grexpnm"]
+
+[ext_resource type="Script" path="res://Client/TechnologyDetectionManager.cs" id="1_d46rk"]
+[ext_resource type="Texture2D" uid="uid://cu4gfh8normdn" path="res://Client/Client.png" id="1_rgdyg"]
+[ext_resource type="Texture2D" uid="uid://dtoflhy1a4vg" path="res://Client/Logos/azure.png" id="3_n5vjv"]
+[ext_resource type="PackedScene" uid="uid://rjuseagr2u63" path="res://Client/TechnologyLogo.tscn" id="5_3mfeq"]
+[ext_resource type="Texture2D" uid="uid://cjw65wy7n2yi5" path="res://Client/Logos/flutter.webp" id="6_swbm7"]
+[ext_resource type="Texture2D" uid="uid://dej78i55dowbv" path="res://Client/Logos/gh.png" id="7_6hcpu"]
+[ext_resource type="Texture2D" uid="uid://cs4spd70tasnm" path="res://Client/Logos/csharp.webp" id="8_nvvie"]
+[ext_resource type="Texture2D" uid="uid://cwffa56ej653s" path="res://Client/Logos/js.png" id="8_sh8p8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2101x"]
+resource_local_to_scene = true
+size = Vector2(2329.59, 2291.68)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ehae"]
+atlas = ExtResource("7_6hcpu")
+region = Rect2(723.156, 11.4335, 2383.63, 2148.57)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rwak4"]
+resource_local_to_scene = true
+size = Vector2(2340.57, 2441.38)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lkq4d"]
+resource_local_to_scene = true
+size = Vector2(5012.05, 4931.5)
+
+[node name="Client" type="Node2D" node_paths=PackedStringArray("RemainingTechnologiesLabel")]
+script = ExtResource("1_d46rk")
+RemainingTechnologiesLabel = NodePath("Label/Number")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+texture = ExtResource("1_rgdyg")
+metadata/_edit_lock_ = true
+
+[node name="Android" parent="." instance=ExtResource("5_3mfeq")]
+self_modulate = Color(0.270588, 0.262745, 0.317647, 0.72549)
+position = Vector2(1213, 136)
+rotation = -0.785398
+
+[node name="Flutter" parent="." instance=ExtResource("5_3mfeq")]
+modulate = Color(0.858824, 0.854902, 0.862745, 1)
+position = Vector2(669.738, 806.446)
+rotation = -0.261799
+scale = Vector2(0.0127022, 0.0158777)
+texture = ExtResource("6_swbm7")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" parent="Flutter/Area2D" index="0"]
+position = Vector2(5.48438, -54.1563)
+shape = SubResource("RectangleShape2D_2101x")
+
+[node name="Github" parent="." instance=ExtResource("5_3mfeq")]
+modulate = Color(1, 1, 1, 0.509804)
+position = Vector2(463, 474)
+scale = Vector2(0.0167651, 0.0154966)
+texture = SubResource("AtlasTexture_2ehae")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" parent="Github/Area2D" index="0"]
+position = Vector2(0, 20.6895)
+shape = SubResource("RectangleShape2D_rwak4")
+
+[node name="JS" parent="." instance=ExtResource("5_3mfeq")]
+modulate = Color(0.776471, 0.776471, 0.776471, 0.890196)
+position = Vector2(1495, 87)
+rotation = 0.382227
+scale = Vector2(0.008375, 0.0083481)
+skew = 0.150098
+texture = ExtResource("8_sh8p8")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" parent="JS/Area2D" index="0"]
+visible = false
+position = Vector2(0, 14.0993)
+shape = SubResource("RectangleShape2D_lkq4d")
+
+[node name="Azure" parent="." instance=ExtResource("5_3mfeq")]
+position = Vector2(1410, 617)
+scale = Vector2(0.0338125, 0.03938)
+texture = ExtResource("3_n5vjv")
+
+[node name="Csharp" parent="." instance=ExtResource("5_3mfeq")]
+position = Vector2(324.409, 143.5)
+scale = Vector2(0.0467763, 0.0447977)
+texture = ExtResource("8_nvvie")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 29.0
+offset_top = 25.0
+offset_right = 403.0
+offset_bottom = 70.0
+theme_override_colors/font_color = Color(0, 0, 0.588235, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 12
+theme_override_font_sizes/font_size = 32
+text = "Technologies restantes :"
+
+[node name="Number" type="Label" parent="Label"]
+offset_left = 383.0
+offset_top = 2.0
+offset_right = 435.0
+offset_bottom = 47.0
+theme_override_colors/font_color = Color(0, 0, 0.588235, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 12
+theme_override_font_sizes/font_size = 32
+text = "06"
+horizontal_alignment = 1
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="GameDone" from="." to="Timer" method="start"]
+[connection signal="timeout" from="Timer" to="." method="LoadLastScene"]
+
+[editable path="Flutter"]
+[editable path="Github"]
+[editable path="JS"]

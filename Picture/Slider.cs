@@ -49,7 +49,9 @@ public partial class Slider : Node2D
 
 		UpdateEmoji();
 
-		if (_smile >= 180 && !_goalReached)
+		var shouldTakePicture = _smile >= 180 && !_goalReached;
+
+		if (shouldTakePicture)
 		{
 			_goalReached = true;
 			EmitSignal(SignalName.SmileReached);
