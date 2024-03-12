@@ -52,7 +52,7 @@ offset_right = -176.175
 offset_bottom = -348.0
 grow_vertical = 0
 script = ExtResource("5_r1p81")
-SceneName = "\"Commercial/Commercial.tscn"
+SceneName = "Client/Client.tscn"
 
 [node name="Label" parent="TalkingBubble/TextureButton" instance=ExtResource("6_sc8sd")]
 layout_mode = 1
