@@ -31,7 +31,7 @@ offset_right = 267.523
 offset_bottom = 135.086
 theme_override_font_sizes/font_size = 36
 text = "Bonjour et bienvenue chez Cellenza, je m'appelle Manon et je serai ton guide pour aujourd'hui.
-La première chose à faire est de prendre une photo de toi avec ton plus beau."
+La première chose à faire est de prendre une photo de toi avec ton plus beau sourire."
 autowrap_mode = 2
 
 [node name="TextureButton" parent="TalkingBubble" instance=ExtResource("3_gyln6")]
