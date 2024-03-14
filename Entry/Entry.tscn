@@ -13,7 +13,6 @@ script = ExtResource("1_q6dne")
 
 [node name="DoorImage" type="Sprite2D" parent="."]
 position = Vector2(960, 540)
-scale = Vector2(1, 1)
 texture = ExtResource("2_8t13p")
 
 [node name="Door" type="Area2D" parent="."]

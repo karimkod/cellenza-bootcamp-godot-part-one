@@ -25,14 +25,13 @@
 position = Vector2(960, 540)
 texture = ExtResource("1_kny4v")
 
-[node name="Slider" type="Node2D" parent="." node_paths=PackedStringArray("Handler", "StartingPosition", "EndingPosition")]
+[node name="Slider" type="Node2D" parent="." node_paths=PackedStringArray("Handler", "StartingPosition")]
 position = Vector2(960, 900)
 scale = Vector2(5, 5)
 script = ExtResource("2_i045d")
 Handler = NodePath("Handle")
 EmojiSteps = Array[Texture2D]([ExtResource("6_4tnre"), ExtResource("4_x2hww"), ExtResource("5_0yvk8"), ExtResource("6_pkuye"), ExtResource("7_hib7b"), ExtResource("8_t1rl2")])
 StartingPosition = NodePath("left")
-EndingPosition = NodePath("end")
 SmileDelta = 20.0
 
 [node name="left" type="Sprite2D" parent="Slider"]

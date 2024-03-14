@@ -14,8 +14,6 @@ public partial class Slider : Node2D
 
 	[Export] public Node2D StartingPosition { get; set; }
 
-	[Export] public Node2D EndingPosition { get; set; }
-
 	[Export] public float SmileDelta { get; set; }
 
 	private float _smile;
